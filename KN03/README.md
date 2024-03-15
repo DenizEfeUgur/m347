@@ -1,3 +1,13 @@
+Netzwek erstellen
+``` sh
+docker network create --subnet=172.19.0.0/16 tbz
+
+docker run -dit --name busybox1 --net tbz --ip 172.18.0.4 -p 8082:8080 busybox
+docker run -dit --name busybox2 --net tbz --ip 172.18.0.5 -p 8083:8080 busybox
+docker run -dit --name busybox3 --net tbz --ip 172.18.0.2 -p 8080:8080 busybox
+docker run -dit --name busybox4 --net tbz --ip 172.18.0.3 -p 8081:8080 busybox
+
+```
 
 **docker inspect**
 ![alt text](image-10.png)
@@ -42,8 +52,8 @@ busybox 3 hat den gleichen default gateway
 
 ## Schlussfolgerung
 
-Meine Schlussfolgerun ist, dass wenn sich Container im selben Netzwerk befinden, können sie miteinader kommunnizieren. Der Unterschied lag darin, dass sich die Container beim KN02 nicht im gleichen Netzwerk befunden haben, sondern mit dem Link sich verknüpft haben.
+Meine Schlussfolgerung ist, dass wenn sich Container im selben Netzwerk befinden, können sie miteinader kommunnizieren. Der Unterschied lag darin, dass sich die Container beim KN02 nicht im gleichen Netzwerk befunden haben, sondern mit dem Link sich verknüpft haben.
 
 ## KN02
-- Die beiden Container befanden sich in dem Netzwerk, welches ich erstellt habe für diesen KN.
-- Und sie konnten miteinadner kommunizieren, da sie mit dem link miteinader verknüft wurden.
+- Die beiden Container befanden sich in dem gleichen Netzwerk wo ich mich befunden habe. Sprich im TBZ Netz
+- Und sie konnten miteinadner kommunizieren, da sie mit dem link miteinader verknüft waren.
