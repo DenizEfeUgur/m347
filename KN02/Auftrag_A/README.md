@@ -1,6 +1,6 @@
 
 # Aufgabe A 
-Docker container builden
+Docker image builden
 ``` sh
 docker build -t kn02a .
 ```
@@ -20,5 +20,5 @@ docker run -d -p 80:80 kn02a
 ```
 <br />
 
-websseite aufrufen
+webseite aufrufen
 ![alt text](image.png)
